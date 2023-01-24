@@ -37,7 +37,7 @@ class DatabaseHelper extends DatabaseStucture {
     String path = await getDatabasesPath();
     return openDatabase(join(path, 'userdb.db'), onCreate: (db, version) async {
       await db.execute(
-          'CREATE TABLE $userTableName($fid INTEGER PRIMIRY KEY,$fname TEXT)');
+          'CREATE TABLE $userTableName($fid INTEGER PRIMIRY KEY,$fname TEXT,$fprofile TEXT)');
     }, version: 1);
   }
 

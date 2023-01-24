@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:pro_local_storage/database/database_helper.dart';
 import 'package:pro_local_storage/models/user_model.dart';
@@ -62,6 +64,9 @@ class _ListUserScreenState extends State<ListUserScreen> {
               var user = snapshot.data![index];
               return Card(
                 child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: FileImage(File(user.profile.toString())),
+                  ),
                   title: Text(user.name.toString()),
                 ),
               );
